@@ -11,6 +11,9 @@ if [[ $# -gt 0 ]]; then
 			if [[ $arg =~ "h" ]]; then
 				echo "
 Project. The project creation helper.
+Project creates and initiates a git repository. Other than that,
+it doesn't really do shit. It is used in every other Project
+script.
 
 Usage: project.sh [arguments](*) [path](**/*3)
        
