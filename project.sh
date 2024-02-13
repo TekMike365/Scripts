@@ -8,6 +8,24 @@ rm_git=0
 if [[ $# -gt 0 ]]; then
 	for arg in $@; do
 		if [[ $arg[1] == "-" ]]; then
+			if [[ $arg =~ "h" ]]; then
+				echo "
+Project. The project creation helper.
+
+Usage: project.sh [arguments](*) [path](**/*3)
+       
+Arguments:
+  -f	force, replaces the existing directory
+  -r	remove README, doesn't create readme
+  -g	git repository will not be initialized
+
+*  You can string the arguments, ie. '-fr' is the same as '-f -r'.
+   Position doesn't matter
+** Path with a name of the folder, ie. /path/do/dir/project_name.
+*3 Underscores will be replaced by spaces in README file.
+"
+				return
+			fi
 			if [[ $arg =~ "f" ]]; then
 				force=1
 			fi
