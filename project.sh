@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-dir="./new_project"
+dir=""
 rm_readme=0
 force=0
 rm_git=0
@@ -42,6 +42,11 @@ Arguments:
 			dir=$arg
 		fi
 	done
+fi
+
+if [[ $dir == "" ]]; then
+	echo "Error: No directory was specified."
+	return
 fi
 
 if [[ -e $dir ]]; then

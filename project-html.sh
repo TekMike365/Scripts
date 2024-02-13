@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-dir="./new_project"
+dir=""
 cpflags=""
 pflags=""
 rm_git=0
@@ -51,6 +51,11 @@ Arguments:
 			dir=$arg
 		fi
 	done
+fi
+
+if [[ $dir == "" ]]; then
+	echo "Error: No directory was specified."
+	return
 fi
 
 echo "Creating a new HTML project."
