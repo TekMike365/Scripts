@@ -1,1 +1,3 @@
-#
+# My Scrips
+
+* requires zsh
