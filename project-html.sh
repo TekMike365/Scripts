@@ -4,6 +4,7 @@ dir="./new_project"
 rm_readme=0
 force=0
 rm_git=0
+cpflags=""
 pflags=""
 
 if [[ $# -gt 0 ]]; then
@@ -20,6 +21,12 @@ if [[ $# -gt 0 ]]; then
 			if [[ $arg =~ "g" ]]; then
 				rm_git=1
 			fi
+			if [[ $arg =~ "t" ]]; then
+				cpflags=($cpflags "t")
+			fi
+			if [[ $arg =~ "b" ]]; then
+				cpflags=($cpflags "b")
+			fi
 		else
 			dir=$arg
 		fi
@@ -31,7 +38,7 @@ scripts_dir=$0:A:h
 $scripts_dir/project.sh -g$pflags $dir
 
 echo "Adding files..."
-cp $scripts_dir/res/html/* $dir
+cp $scripts_dir/res/html-$cpflags/* $dir
 
 if [[ rm_git -eq 0 ]]; then
 	echo "> Creating .gitignore"
