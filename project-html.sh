@@ -38,7 +38,7 @@ scripts_dir=$0:A:h
 $scripts_dir/project.sh -g$pflags $dir
 
 echo "Adding files..."
-cp $scripts_dir/res/html-$cpflags/* $dir
+cp $scripts_dir/res/html$cpflags/* $dir
 
 if [[ rm_git -eq 0 ]]; then
 	echo "> Creating .gitignore"
