@@ -57,5 +57,3 @@ if [[ rm_git -eq 0 ]]; then
 	git add .
 	git commit -m "Initial comit"
 fi
-
-echo Done.
