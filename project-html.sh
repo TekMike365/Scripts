@@ -55,6 +55,7 @@ fi
 
 if [[ $dir == "" ]]; then
 	echo "Error: No directory was specified."
+	echo "help:  project.sh -h"
 	return
 fi
 
